@@ -1,5 +1,5 @@
 {
-  "name": "env",
+  "name": "env-loader",
   "version": "0.0.0",
   "description": "__dirname/.env to process.env in TypeScript",
   "main": "src/index.js",
