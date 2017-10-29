@@ -3,7 +3,7 @@ import * as path from 'path';
 
 const re: RegExp = new RegExp(/^\s*([\w\-\.]+)\s*=\s*([\w\-\.]+)\s*/);
 
-const load = (filename = '.env') => {
+const load = (filename = '.env', verbose) => {
   // get an absolute link to the filename
   // const absFile: string = path.join(__dirname, filename);
 
@@ -12,7 +12,7 @@ const load = (filename = '.env') => {
   try {
     vars = fs.readFileSync(filename).toString();
   } catch (e) {
-    console.log('Error, env file not found! Refusing to load.');
+    if (verbose) console.log('Error, env file not found! Refusing to load.');
     return false;
   }
   // split in to lines of key=value

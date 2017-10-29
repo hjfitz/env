@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
 var re = new RegExp(/^\s*([\w\-\.]+)\s*=\s*([\w\-\.]+)\s*/);
-var load = function (filename) {
+var load = function (filename, verbose) {
     // get an absolute link to the filename
     // const absFile: string = path.join(__dirname, filename);
     if (filename === void 0) { filename = '.env'; }
@@ -12,7 +12,8 @@ var load = function (filename) {
         vars = fs.readFileSync(filename).toString();
     }
     catch (e) {
-        console.log('Error, env file not found! Refusing to load.');
+        if (verbose)
+            console.log('Error, env file not found! Refusing to load.');
         return false;
     }
     // split in to lines of key=value
