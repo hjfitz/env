@@ -4,7 +4,6 @@ var fs = require("fs");
 var re = new RegExp(/^\s*([\w\-\.]+)\s*=\s*([\w\-\.\s\:\/\?\=]*)/);
 var load = function (filename, verbose) {
     // get an absolute link to the filename
-    // const absFile: string = path.join(__dirname, filename);
     if (filename === void 0) { filename = '.env'; }
     // read the file and cast to string
     var vars;
