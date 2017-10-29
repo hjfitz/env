@@ -1,5 +1,5 @@
 # env
-[![Bless](https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/alpaca.svg)](http://lunagao.github.io/BlessYourCodeTag/)
+[![Bless](https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/alpaca.svg)](http://lunagao.github.io/BlessYourCodeTag/) [![npm](https://img.shields.io/npm/v/local-env-var.svg)](https://www.npmjs.com/package/local-env-var)
 
 
 This program strives to be a minimal way of loading variables from a configuration file, and attaches them to `process.env`, like `heroku local` or `dotenv` do.
