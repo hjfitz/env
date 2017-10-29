@@ -5,7 +5,6 @@ const re: RegExp = new RegExp(/^\s*([\w\-\.]+)\s*=\s*([\w\-\.\s\:\/\?\=]*)/);
 
 const load = (filename: string = '.env', verbose: boolean) => {
   // get an absolute link to the filename
-  // const absFile: string = path.join(__dirname, filename);
 
   // read the file and cast to string
   let vars: string;
