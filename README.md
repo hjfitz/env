@@ -20,14 +20,19 @@ yarn add whateverthisispublishedas
 
 # Usage
 
-* Require, and call. 
+## Require, and call. 
 ```js
-require('env')();
+require('require-env-vars')();
+// or
+require('require-env-vars')('/path/to/someother/file');
 ```
 
-* Need a file other than `.env`?
-```js
-require('env')('/path/to/someother/file');
+## Alternately
+```typescript
+import * as env from 'require-env-vars';
+env();
+//or
+env('/path/to/someother/file');
 ```
 
 # Building
