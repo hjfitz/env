@@ -18,7 +18,7 @@ const load = (filename: string = '.env', verbose: boolean) => {
   // split in to lines of key=value
   const lines: string[] = vars.split('\n');
   // assume that the user correctly writes their .env
-  lines.forEach(line => {
+  lines.forEach((line: string) => {
     // handle comments
     const isComment: boolean = line.charAt(0) === '#' || line.substring(0, 2) === '//';
     // check if the line is of the form foo=bar
