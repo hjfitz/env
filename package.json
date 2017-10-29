@@ -7,22 +7,29 @@
   "author": "Harry <hfitz83@gmail.com>",
   "license": "GPL-3.0",
   "scripts": {
-    "build": "tsc --pretty"
+    "build": "tsc --pretty",
+    "test": "tsc --pretty && mocha"
   },
   "pre-commit": [
     "build"
   ],
   "devDependencies": {
     "@types/node": "^8.0.34",
+    "chai": "^4.1.2",
     "eslint": "^4.8.0",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-config-airbnb-base": "^12.0.2",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
+    "mocha": "^4.0.1",
     "pre-commit": "^1.2.2",
     "ts-loader": "^2.3.7",
     "typescript": "^2.5.3",
     "typescript-loader": "^1.1.3"
+  },
+  "dependencies": {
+    "mocha-sinon": "^2.0.0",
+    "sinon": "^4.0.2"
   }
 }

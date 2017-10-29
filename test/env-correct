@@ -1,0 +1,5 @@
+CONTENTFUL_URL=somehting
+REDIS_URL=something else
+API_KEY=supersecretstopscrapingme
+// this is a comment
+# this is also a comment
