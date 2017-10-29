@@ -8,7 +8,8 @@
   "license": "GPL-3.0",
   "scripts": {
     "build": "tsc --pretty",
-    "test": "tsc --pretty && mocha"
+    "testbuild": "tsc --pretty && mocha",
+    "test": "mocha"
   },
   "pre-commit": [
     "build"

@@ -1,9 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const re: RegExp = new RegExp(/^\s*([\w\-\.]+)\s*=\s*([\w\-\.]+)\s*/);
+const re: RegExp = new RegExp(/^\s*([\w\-\.]+)\s*=\s*([\w\-\.\s\:\/\?\=]*)/);
 
-const load = (filename = '.env', verbose) => {
+const load = (filename: string = '.env', verbose: boolean) => {
   // get an absolute link to the filename
   // const absFile: string = path.join(__dirname, filename);
 
@@ -26,12 +26,12 @@ const load = (filename = '.env', verbose) => {
 
     if ((hasCorrectForm || !isComment) && line) {
       // extract the goods from each
-      const split = re.exec(line);
-      if (split.length >= 3) {
+      const split: Array<any> = re.exec(line);
+      if (split && split.length >= 3) {
         const [useless, key, value] = re.exec(line);
         // set process.env.key to the value - removing any whitespace
         if (key && value) {
-          const trimmed: string = value.replace(/\s/, '');
+          const trimmed: string = value.trim();
           process.env[key] = trimmed;
         }
       }

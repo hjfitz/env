@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
-var re = new RegExp(/^\s*([\w\-\.]+)\s*=\s*([\w\-\.]+)\s*/);
+var re = new RegExp(/^\s*([\w\-\.]+)\s*=\s*([\w\-\.\s\:\/\?\=]*)/);
 var load = function (filename, verbose) {
     // get an absolute link to the filename
     // const absFile: string = path.join(__dirname, filename);
@@ -27,11 +27,11 @@ var load = function (filename, verbose) {
         if ((hasCorrectForm || !isComment) && line) {
             // extract the goods from each
             var split = re.exec(line);
-            if (split.length >= 3) {
+            if (split && split.length >= 3) {
                 var _a = re.exec(line), useless = _a[0], key = _a[1], value = _a[2];
                 // set process.env.key to the value - removing any whitespace
                 if (key && value) {
-                    var trimmed = value.replace(/\s/, '');
+                    var trimmed = value.trim();
                     process.env[key] = trimmed;
                 }
             }
