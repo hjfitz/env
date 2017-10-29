@@ -1,7 +1,7 @@
 {
-  "name": "env-loader",
-  "version": "0.0.0",
-  "description": "__dirname/.env to process.env in TypeScript",
+  "name": "local-env-var",
+  "version": "1.0.0",
+  "description": "simple .env -> process.env",
   "main": "src/index.js",
   "repository": "https://github.com/hjfitz/env",
   "author": "Harry <hfitz83@gmail.com>",
