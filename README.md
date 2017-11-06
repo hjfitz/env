@@ -15,21 +15,21 @@ Build with <3 in TypeScript. Can be used with **ES5** and above!
 
 # Install
 ```bash
-yarn add whateverthisispublishedas
+yarn add local-env-var 
 ```
 
 # Usage
 
 ## Require, and call. 
 ```js
-require('require-env-vars')();
+require('local-env-var')();
 // or
-require('require-env-vars')('/path/to/someother/file');
+require('local-env-var')('/path/to/someother/file');
 ```
 
 ## Alternately
 ```typescript
-import * as env from 'require-env-vars';
+import * as env from 'local-env-vars';
 env();
 //or
 env('/path/to/someother/file');

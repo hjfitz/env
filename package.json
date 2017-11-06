@@ -1,9 +1,9 @@
 {
   "name": "local-env-var",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "simple .env -> process.env",
   "main": "dist/index.js",
-  "repository": "https://github.com/hjfitz/env",
+  "repository": "https://github.com/hjfitz/local-env-var",
   "author": "Harry <hfitz83@gmail.com>",
   "license": "GPL-3.0",
   "scripts": {
