@@ -1,46 +1,31 @@
-# env
+# Environment Variable Loader
+> Loading .env in to process.env
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f9ac740aa7d4495daba35205728f9fc9)](https://www.codacy.com/app/hjfitz/local-env-var?utm_source=github.com&utm_medium=referral&utm_content=hjfitz/local-env-var&utm_campaign=badger)
 [![Bless](https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/alpaca.svg)](http://lunagao.github.io/BlessYourCodeTag/) [![npm](https://img.shields.io/npm/v/local-env-var.svg)](https://www.npmjs.com/package/local-env-var)
 
+## Intro
+This program strives to be a _minimal_ way of loading variables from a configuration file (`.env`), and attaches them to `process.env`.
 
-This program strives to be a minimal way of loading variables from a configuration file, and attaches them to `process.env`, like `heroku local` or `dotenv` do.
+This works similarly to running your program with `heroku local` running `dotenv.parse()`.
 
-By default, it looks for a file named `.env` in the root dir of your program. It's expected that your `.env` file looks like the following:
-```dosini
+## Prerequisites
+All you need for this is a file named `.env`. Its contents should look like this:
+
+```ini
 CONTENTFUL_KEY=somesecretkey
 CONTENTFUL_SPACE=somespaceurl
 SECRET_API_KEY_THAT_WONT_GET_POSTED_TO_GIT=whoops
 ```
 
-Build with <3 in TypeScript. Can be used with **ES5** and above!
+## Usage
+Simply load the library!
 
-# Install
-```bash
-yarn add local-env-var 
-```
-
-# Usage
-
-## Require, and call. 
 ```js
-require('local-env-var')();
-// or
-require('local-env-var')('/path/to/someother/file');
+// ES6 imports
+import 'local-env-var';
+// Node module require
+require('local-env-var');
 ```
 
-## Alternately
-```typescript
-import * as env from 'local-env-vars';
-env();
-//or
-env('/path/to/someother/file');
-```
 
-# Building
-`yarn build`
-
-# Testing
-`yarn test`
-
-# Bugs
-Expected.
