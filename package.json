@@ -1,6 +1,6 @@
 {
   "name": "local-env-var",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "simple .env -> process.env",
   "main": "dist/index.js",
   "repository": "https://github.com/hjfitz/local-env-var",
