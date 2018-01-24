@@ -16,13 +16,7 @@ gulp.task('build', () => gulp
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest('dist')));
 
-gulp.task('docs', cb => gulp
-  .src(['./dist/*.js'])
-  .pipe(jsdoc(jsdocConfig, cb)));
-
-
 gulp.task('watch', () => gulp.watch(['./src/**/*.ts'], ['build']));
 
-gulp.task('precommit', []);
 
-gulp.task('default', ['build', 'docs']);
+gulp.task('default', ['build']);

@@ -7,9 +7,10 @@
   "author": "Harry <hfitz83@gmail.com>",
   "license": "GPL-3.0",
   "scripts": {
-    "build": "gulp build",
+    "build": "gulp",
     "test": "mocha",
-    "testbuild": "yarn build && yarn test && yarn build"
+    "docs": "jsdoc -d jsdoc.config.json",
+    "testbuild": "yarn build && yarn test && yarn build && yarn docs"
   },
   "pre-commit": [
     "testbuild"
