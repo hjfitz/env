@@ -10,7 +10,7 @@
     "build": "gulp",
     "test": "mocha",
     "docs": "jsdoc -d jsdoc.config.json",
-    "testbuild": "yarn build && yarn test && yarn build && yarn docs"
+    "testbuild": "yarn build && yarn docs && yarn test && yarn build"
   },
   "pre-commit": [
     "testbuild"
