@@ -9,7 +9,7 @@
   "scripts": {
     "build": "gulp build",
     "test": "mocha",
-    "testbuild": "yarn test && yarn build"
+    "testbuild": "yarn build && yarn test && yarn build"
   },
   "pre-commit": [
     "testbuild"
