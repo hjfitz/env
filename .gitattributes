@@ -1,2 +1,2 @@
-dist/ linguist-generated
-docs/ linguist-generated
+dist/ linguist-vendored
+docs/ linguist-vendored
