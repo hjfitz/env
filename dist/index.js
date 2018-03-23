@@ -13,12 +13,13 @@ try {
 } catch (ex) {}
 // begin parsing each entry
 lines.forEach(function (line) {
+    debug(line);
     // allow for # or // to denote a comment
     var isComment = line.charAt(0) === '#' || line.charAt(0) === ';';
     // if it's of the form var=val or not a comment, parse
     if (!isComment) {
         // extract the goods from each
-        var split = line.split('=');
+        var split = line.trim().split('=');
         if (split && split.length >= 2) {
             var key = split[0],
                 value = split.slice(1);

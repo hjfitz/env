@@ -1,17 +1,11 @@
 const { expect } = require('chai');
-const debug = require('debug')('local-env-var:test');
 
 describe('env', () => {
   it('Should load 4 variables', () => {
     const varsBefore = Object.keys(process.env);
     require('../dist');
-    debug(process.env.CONTENTFUL_URL);
-    debug(process.env.REDIS_URL);
-    debug(process.env.API_KEY);
-    debug(process.env.SECRET_VIDEO_URL);
-    debug('EMPTY' in process.env);
     const varsAfter = Object.keys(process.env);
-    expect(varsAfter.length - varsBefore.length).to.equal(4);
+    expect(varsAfter.length - varsBefore.length).to.equal(6);
     
   });
 
@@ -29,6 +23,20 @@ describe('env', () => {
 
   it('Should not load empty variables', () => {
     expect('EMPTY' in process.env).to.be.false;
-  })
+  });
+
+  it("Shouldn't load commented files", () => {
+    expect('this' in process.env).to.be.false;
+  });
+
+  it('Should trim keys', () => {
+    expect('ANOTHER_URL' in process.env).to.be.true;
+  });
+
+  it('Should load values preceeded by newlines', () => {
+    expect('OTHER_SECRET_VIDEO_URL' in process.env).to.be.true;
+  });
+
+
 });
 
