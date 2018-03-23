@@ -2,34 +2,33 @@
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs_1 = require("fs");
+var debug = require('debug')('local-env-var');
 // load DIRTY regex
 var re = new RegExp(/^\s*([\w\-\.]+)\s*=\s*([\w\-\.\s\:\/\?\=]*)/);
-// read .env
 var lines = [];
+// attempt to read file. if it doesn't exist, fail silently
 try {
     var vars = fs_1.readFileSync('.env');
-    // split in to lines of key=value
-    lines = vars.toString().split('\n');
+    lines = vars.toString().trim().split('\n');
 } catch (ex) {}
-// go through each line and add them to .env
+// begin parsing each entry
 lines.forEach(function (line) {
     // allow for # or // to denote a comment
-    var isComment = line.charAt(0) === '#' || line.substring(0, 2) === '//';
-    // check if the line is of the form foo=bar
-    var hasCorrectForm = re.test(line);
+    var isComment = line.charAt(0) === '#' || line.charAt(0) === ';';
     // if it's of the form var=val or not a comment, parse
-    if (hasCorrectForm || !isComment) {
+    if (!isComment) {
         // extract the goods from each
-        var split = re.exec(line);
-        if (split && split.length >= 3) {
-            var unused = split[0],
-                key = split[1],
-                value = split[2];
+        var split = line.split('=');
+        if (split && split.length >= 2) {
+            var key = split[0],
+                value = split.slice(1);
             // set process.env.key to the value - removing any whitespace
-            var trimmed = value.trim();
             // ensure there are no empty keys set
-            if (trimmed === '') return;
-            process.env[key] = trimmed;
+            debug("key: " + key);
+            debug("value: " + (value[0] === undefined));
+            if (!key || !value[0]) return;
+            debug("Adding " + key + " to process.env");
+            process.env[key] = value.join('=').trim();
         }
     }
 });

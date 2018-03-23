@@ -9,7 +9,7 @@ const jsdocConfig = require('./jsdoc.config.json');
 const tsProj = ts.createProject('tsconfig.json');
 
 gulp.task('build', () => gulp
-  .src('src/**/*.ts')
+  .src('lib/**/*.ts')
   .pipe(sourcemaps.init())
   .pipe(tsProj())
   .pipe(babel())
