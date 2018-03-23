@@ -1,6 +1,6 @@
 {
   "name": "local-env-var",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "simple .env -> process.env",
   "main": "dist/index.js",
   "repository": "https://github.com/hjfitz/local-env-var",
@@ -21,7 +21,6 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
-    "debug": "^3.1.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-jsdoc3": "^1.0.1",
@@ -33,5 +32,8 @@
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.4.2",
     "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "debug": "^3.1.0"
   }
 }
