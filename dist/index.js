@@ -24,8 +24,6 @@ lines.forEach(function (line) {
                 value = split.slice(1);
             // set process.env.key to the value - removing any whitespace
             // ensure there are no empty keys set
-            debug("key: " + key);
-            debug("value: " + (value[0] === undefined));
             if (!key || !value[0]) return;
             debug("Adding " + key + " to process.env");
             process.env[key] = value.join('=').trim();
